@@ -33,20 +33,29 @@ public class SecondStep {
 		String answer = "";
 		int maxReps = 0;
 		Hashtable<String, Integer> hashTable = new Hashtable<String, Integer>();
+		//Iterates over each of the items of the list of n-grams. 
+		//Complexity: O(n) where n is the length of the list
 		for (String string : nGrams) {
+			//Checks if the word is already in the hash table. 
 			if(!hashTable.containsKey(string))
 			{
+				//If it is not, adds the word and sets the number of repetitions to 1.
+				//Complexity: Average=O(1), Worst case=O(n)
 				hashTable.put(string, 1);
 			}
 			else 
 			{
+				//If it is, adds 1 to the number of repetitions of the word.
+				//Complexity: Average=O(1), Worst case=O(n)
 				hashTable.put(string, hashTable.get(string)+1);
 				if(hashTable.get(string)>maxReps) {
+					//Checks if the word has more repetitions than maxReps. If yes, the answer is replaced with said word.
 					maxReps = hashTable.get(string);
 					answer = string;
 				}
 			}
 		}
+		//Global complexity: Average=O(n) Worst case=O(n**2)
 		return answer;
 	}
 	
