@@ -10,8 +10,8 @@ public class FirstStep {
 	
 	/**
 	 * Calculates the n-grams of a word
-	 * @param text word used to calculate the n-grams
-	 * @param n number of n-grams to be calculated
+	 * @param text Word used to calculate the n-grams
+	 * @param n Size of grouping for n-grams to be calculated
 	 * @return List of n-grams
 	 */
 	public static ArrayList<String> calculateNGrams(String text, int n) {
