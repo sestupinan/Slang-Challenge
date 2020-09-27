@@ -17,10 +17,12 @@ public class FirstStep {
 	public static ArrayList<String> calculateNGrams(String text, int n) {
 		ArrayList<String> nGrams = new ArrayList<String>();
 		int textLength = text.length();
+		//Iterate over the word, until i<=textLength-n to avoid IndexOutOfBounds. Complexity:  O(n)
 		for (int i = 0; i <= textLength-n; i++) {
-			//For each letter in the word, get the substring from i to i+n
+			//For each letter in the word, get the substring from i to i+n. Complexity: O(1)
 			nGrams.add(text.substring(i, i+n));
 		}	
+		//Global complexity: O(n)
 		return nGrams;
 	}
 	
